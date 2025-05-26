@@ -14,6 +14,8 @@ const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
 
 export default buildConfig({
+  cors: ['https://payload-ten-dun.vercel.app', 'http://localhost:3000'],
+  csrf: ['https://payload-ten-dun.vercel.app', 'http://localhost:3000'],
   admin: {
     user: Users.slug,
     importMap: {

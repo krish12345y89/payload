@@ -31,6 +31,10 @@ export default buildConfig({
   db: postgresAdapter({
     pool: {
       connectionString: process.env.DATABASE_URI || '',
+      ssl:true,
+      max: 10, // Adjust the maximum number of connections in the pool
+      idleTimeoutMillis: 100000, // Adjust the idle timeout for connections
+      connectionTimeoutMillis: 20000, // Adjust the connection timeout
     },
   }),
   sharp,
